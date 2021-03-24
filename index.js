@@ -4,6 +4,10 @@ const data = require("./data.json")
 
 app.use(express.json())
 
+app.get("/", (req, res) => {
+    res.sendFile(__dirname + "/pages/index.html")
+})
+
 app.get("/clients", function(req, res) {
     res.json(data)
 })
